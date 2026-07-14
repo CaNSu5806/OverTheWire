@@ -17,8 +17,8 @@ The primary goal of this repository is to track my development in command-line p
 ### 📂 Repository Structure
 ```text
 ├── Bandit/              # Linux command line fundamentals
-│   ├── Level00-05.md    # Detailed methodology for levels 0 to 5
-│   ├── Level06-10.md    # Detailed methodology for levels 6 to 10
+│   ├── Bandit1.md       # Detailed methodology for levels 1 to 2
+│   ├── Bandit6.md       # Detailed methodology for levels 6 to 7
 │   └── README.md        # Bandit series overview & core learning objectives
 ├── Natas/               # Web application security concepts (Future)
 └── README.md            # Main entry point (This file)
@@ -40,8 +40,8 @@ OverTheWire Wargames çözüm ve dokümantasyon repoma hoş geldiniz! Bu proje, 
 Bu reponun temel amacı; Linux komut satırı hakimiyeti, sunucu yönetimi, ağ protokolleri ve temel sızma testi mantığı konularındaki pratik gelişimimi yapılandırılmış bir düzende takip etmektir.
 ```text
 ├── Bandit/              # Temel Linux komut satırı pratikleri
-│   ├── Level00-05.md    # 0 - 5 arası seviyelerin detaylı çözümleri
-│   ├── Level06-10.md    # 6 - 10 arası seviyelerin detaylı çözümleri
+│   ├── Bandit1.md       # 1. seviyeden 2'ye geçerken izlenilen yol
+│   ├── Bandit6.md       # 6. seviyeden 7'ye geçerken izlenilen yol
 │   └── README.md        # Bandit serisi özeti ve öğrenim çıktıları
 ├── Natas/               # Web uygulamaları güvenliği konseptleri (Yakında)
 └── README.md            # Ana giriş sayfası (Bu dosya)
