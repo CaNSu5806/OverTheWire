@@ -8,7 +8,7 @@
 
 ---
 
-## 🇬🇧 English Description
+## English Description
 
 Welcome to my **OverTheWire Wargames** repository! This project serves as my personal cyber security log where I document my solutions, methodologies, and core findings while progressing through various security challenges hosted by OverTheWire.
 
@@ -17,8 +17,8 @@ The primary goal of this repository is to track my development in command-line p
 ### 📂 Repository Structure
 ```text
 ├── Bandit/              # Linux command line fundamentals
-│   ├── Bandit1.md       # Detailed methodology for levels 1 to 2
-│   ├── Bandit6.md       # Detailed methodology for levels 6 to 7
+│   ├── bandit1.md       # Detailed methodology for levels 1 to 2
+│   ├── bandit6.md       # Detailed methodology for levels 6 to 7
 │   └── README.md        # Bandit series overview & core learning objectives
 ├── Natas/               # Web application security concepts (Future)
 └── README.md            # Main entry point (This file)
@@ -34,14 +34,15 @@ Each milestone markdown file utilizes a standardized template for structural con
 - **Core Concept:** In Linux environments, files prefixed with a dot (`.`) are hidden by default. Standard directory listings omit them; thus, the `-a` (all) flag must be appended to the list command.
 
   
-🇹🇷
+## Türkçe Açıklama
+
 OverTheWire Wargames çözüm ve dokümantasyon repoma hoş geldiniz! Bu proje, OverTheWire platformunda yer alan siber güvenlik laboratuvarlarını çözerken edindiğim bilgileri, kullandığım yöntemleri ve teknik yaklaşımları kayıt altında tuttuğum kişisel siber güvenlik günlüğüm ve portfolyomdur.
 
 Bu reponun temel amacı; Linux komut satırı hakimiyeti, sunucu yönetimi, ağ protokolleri ve temel sızma testi mantığı konularındaki pratik gelişimimi yapılandırılmış bir düzende takip etmektir.
 ```text
 ├── Bandit/              # Temel Linux komut satırı pratikleri
-│   ├── Bandit1.md       # 1. seviyeden 2'ye geçerken izlenilen yol
-│   ├── Bandit6.md       # 6. seviyeden 7'ye geçerken izlenilen yol
+│   ├── bandit1.md       # 1. seviyeden 2'ye geçerken izlenilen yol
+│   ├── bandit6.md       # 6. seviyeden 7'ye geçerken izlenilen yol
 │   └── README.md        # Bandit serisi özeti ve öğrenim çıktıları
 ├── Natas/               # Web uygulamaları güvenliği konseptleri (Yakında)
 └── README.md            # Ana giriş sayfası (Bu dosya)
