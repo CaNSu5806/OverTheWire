@@ -2,77 +2,75 @@
 
 ## Goal | Amaç
 
-**EN:** Find the password for Level 10 inside `data.txt`. The password is stored in one of the **human-readable strings** and is preceded by several `=` characters.
+**EN:** Find the password for **Bandit Level 10**.
 
-**TR:** `data.txt` dosyasının içinde bulunan Level 10 şifresini bulmak. İpucuna göre şifre, **insan tarafından okunabilir (human-readable)** bir metin olarak saklanmış ve öncesinde birkaç tane `=` karakteri bulunuyor.
-
----
-
-## Understanding the Hint | İpucunu Anlamak
-
-The hint says:
-
-> *The password is in the file `data.txt` and is one of the few human-readable strings, preceded by several '=' characters.*
-
-İpucunda dosyanın içinde çok fazla veri olduğu, ancak bunların arasındaki sadece birkaç kısmın okunabilir metin olduğu söyleniyor. Ayrıca şifreden hemen önce birkaç tane `=` karakteri bulunduğu belirtiliyor. Bu yüzden önce okunabilir metinleri çıkarmak, ardından içinde `=` geçen satırları filtrelemek en mantıklı yöntem oldu.
+**TR:** **Bandit Level 10** için gerekli şifreyi bulmak.
 
 ---
 
-## Finding the Password | Şifreyi Bulma
+## Challenge Hint | Verilen İpucu
+
+The challenge stated that the password is stored in `data.txt`, which contains **Base64 encoded data**.
+
+Challenge'da şifrenin **Base64 ile kodlanmış** `data.txt` dosyasında bulunduğu belirtiliyordu.
+
+---
+
+## Viewing the File | Dosyayı İnceleme
 
 ```bash
-strings data.txt | grep "=="
+cat data.txt
+```
+
+The output was a long string containing uppercase and lowercase letters, numbers, and characters such as `+`, `/`, and `=`.
+
+Since the challenge explicitly stated that the file was Base64 encoded, the next step was to decode it. The character set (`A-Z`, `a-z`, `0-9`, `+`, `/`, `=`) is also typical of Base64 encoding.
+
+Dosyanın içeriği büyük-küçük harfler, sayılar ve `+`, `/`, `=` gibi karakterlerden oluşan uzun bir metindi.
+
+Challenge açıklamasında verinin Base64 ile kodlandığı belirtildiği için bir sonraki adım bu veriyi çözmek oldu. Ayrıca kullanılan karakter kümesi (`A-Z`, `a-z`, `0-9`, `+`, `/`, `=`) Base64 kodlamasının tipik özelliklerinden biridir.
+
+---
+
+## Decoding the File | Veriyi Çözme
+
+```bash
+base64 -d data.txt
 ```
 
 ### Explanation (EN)
 
-#### `strings`
+#### `base64`
 
-The `strings` command extracts printable, human-readable text from a file. It is especially useful when a file contains binary or unreadable data.
+The `base64` utility is used to encode and decode Base64 data.
 
-#### `grep`
+#### `-d`
 
-`grep` searches for lines that match a specific pattern.
+The `-d` option tells the command to **decode** the Base64-encoded data back to its original form.
 
-#### `"=="`
+#### `data.txt`
 
-Here I searched for lines containing `==` because the hint mentioned that the password is preceded by several `=` characters.
+The file containing the encoded data.
 
-#### `|` (Pipe)
-
-The pipe (`|`) sends the output of the first command directly to the second command.
-
-In this case:
-
-- `strings` extracts all readable text.
-- `grep "=="` filters those results and only shows the lines containing `==`.
+Running the command revealed the password for **Bandit Level 10**.
 
 ---
 
 ### Açıklama (TR)
 
-#### `strings`
+#### `base64`
 
-`strings` komutu, bir dosyanın içindeki okunabilir metinleri ekrana çıkarmak için kullanılır. Özellikle binary dosyalar veya anlamsız karakterler içeren dosyalarda işe yarar. Bu levelde de dosyanın büyük kısmı okunamayan verilerden oluştuğu için önce okunabilir kısımları çıkarmamız gerekiyordu.
+`base64` komutu, Base64 ile kodlanmış verileri kodlamak ve çözmek için kullanılır.
 
-#### `grep`
+#### `-d`
 
-`grep` komutu belirttiğimiz ifadeyi içeren satırları bulur ve sadece onları gösterir.
+`-d` parametresi, Base64 ile kodlanmış veriyi **decode ederek** orijinal haline dönüştürür.
 
-#### `"=="`
+#### `data.txt`
 
-İpucunda şifreden önce birkaç tane `=` karakteri olduğu söylendiği için `==` ifadesini arattım. Böylece gereksiz satırlar elenmiş oldu.
+Kodlanmış veriyi içeren dosyadır.
 
-#### `|` (Pipe)
-
-`|` (pipe), ilk komutun çıktısını ikinci komuta aktarır.
-
-Bu komutta:
-
-- `strings`, okunabilir metinleri çıkardı.
-- `grep "=="` ise sadece içinde `==` geçen satırları gösterdi.
-
-Bu sayede şifrenin bulunduğu satıra kolayca ulaştım.
+Komut çalıştırıldığında **Bandit Level 10** için gerekli şifre ekrana yazdırıldı.
 
 ---
 
@@ -80,15 +78,14 @@ Bu sayede şifrenin bulunduğu satıra kolayca ulaştım.
 
 | Command | Description |
 |---------|-------------|
-| `strings` | Extracts human-readable text from a file. |
-| `grep` | Searches for lines matching a pattern. |
-| `|` | Sends the output of one command to another command. |
+| `cat data.txt` | Display the contents of the file. |
+| `base64 -d data.txt` | Decode the Base64-encoded data. |
 
 ---
 
 ## What I Learned
 
-- How to extract readable text from binary-looking files using `strings`.
-- How to filter command output with `grep`.
-- How to combine multiple commands using a pipe (`|`).
-- How to use the given hint to narrow down the search instead of checking the entire file manually.
+- What Base64 encoding is.
+- How to recognize Base64-encoded text.
+- How to decode Base64 data using the `base64` command.
+- The difference between **encoding** and **encryption**.
